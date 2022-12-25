@@ -1,0 +1,14 @@
+{
+  "name": "const",
+  "version": "1.0.0",
+  "description": "Constants",
+  "license": "MIT",
+  "private": true,
+  "main": "index.ts",
+  "scripts": {
+    "codegen": ".",
+    "build": ".",
+    "prepare:neon": "mustache config/neon.json index.template.ts > index.ts",
+    "prepare:devnet": "mustache config/devnet.json index.template.ts > index.ts"
+  }
+}

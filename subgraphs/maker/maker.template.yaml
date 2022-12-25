@@ -1,0 +1,33 @@
+specVersion: 0.0.2
+description: MoraMaker
+schema:
+  file: ./maker.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: MoraMaker
+    network: {{ network }}
+    source:
+      address: '{{ address }}'
+      abi: MoraMaker
+      startBlock: {{ startBlock }}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ./src/mappings/maker.ts
+      entities:
+        - Maker
+        - Server
+        - Serving
+      abis:
+        - name: MoraMaker 
+          file: ../../packages/abis/MoraMaker.json
+        - name: Pair
+          file: ../../packages/abis/MoraPair.json
+        - name: ERC20
+          file: ../../packages/abis/ERC20.json
+        - name: Factory
+          file: ../../packages/abis/MoraFactory.json
+      eventHandlers:
+        - event: LogConvertToMORA(indexed address,indexed address,indexed address,uint256,uint256,uint256)
+          handler: handleLogConvert

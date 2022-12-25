@@ -1,0 +1,31 @@
+specVersion: 0.0.3
+description: Bar
+repository: https://github.com/moraswap/subgraphs
+schema:
+  file: bar.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: MoraBar
+    network: neon_devnet
+    source:
+      address: "0x549b5cb2D324F901aEd6938a3838fB9b10898441"
+      abi: Bar
+      startBlock: 177663209
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Bar
+        - User
+      abis:
+        - name: Bar
+          file: ../packages/abis/MoraBar.json
+        - name: MoraToken
+          file: ../packages/abis/MoraToken.json
+        - name: Pair
+          file: ../packages/abis/MoraPair.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: transfer
+      file: MoraBar/MoraBar.wasm

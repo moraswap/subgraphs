@@ -1,0 +1,46 @@
+specVersion: 0.0.3
+description: Masterchef
+repository: https://github.com/moraswap/subgraphs
+schema:
+  file: ./masterchef.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: MasterChef
+    network: {{ network }}
+    source:
+      address: '{{ address }}'
+      abi: MasterChef
+      startBlock: {{ startBlock }}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - MasterChef
+        - History
+        - Pool
+        - PoolHistory
+        - User
+      abis:
+        - name: MasterChef
+          file: ../../packages/abis/MasterChef.json
+        - name: Factory
+          file: ../../packages/abis/MoraFactory.json
+        - name: Pair
+          file: ../../packages/abis/MoraPair.json
+        - name: ERC20
+          file: ../../packages/abis/ERC20.json
+      eventHandlers:
+        - event: Deposit(indexed address,indexed uint256,uint256)
+          handler: deposit
+        - event: EmergencyWithdraw(indexed address,indexed uint256,uint256)
+          handler: emergencyWithdraw
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: ownershipTransferred
+        - event: Withdraw(indexed address,indexed uint256,uint256)
+          handler: withdraw
+        - event: AddPool(uint256,address,address)
+          handler: add
+        - event: SetPool(indexed uint256,uint256,address)
+          handler: set
+      file: ./src/masterchef.ts

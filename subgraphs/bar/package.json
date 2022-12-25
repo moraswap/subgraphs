@@ -1,0 +1,23 @@
+{
+    "name": "bar",
+    "license": "MIT",
+    "version": "1.0.0",
+    "author": "Moraswap",
+    "scripts": {
+	    "prepare:neon": "mustache config/neon.json bar.template.yaml > bar.neon.yaml",
+        "prepare:devnet": "mustache config/devnet.json bar.template.yaml > bar.devnet.yaml",
+
+        "codegen:neon": "graph codegen bar.neon.yaml",
+        "codegen:devnet": "graph codegen bar.devnet.yaml",
+
+        "build:neon": "graph build bar.neon.yaml",
+        "build:devnet": "graph build bar.devnet.yaml",
+
+        "deploy:neon": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ moraswap/bar bar.neon.yaml",
+        "deploy:devnet": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ moraswap/bar-devnet bar.devnet.yaml",
+
+        "create-local": "graph create --node http://localhost:8020/ moraswap/bar",
+        "remove-local": "graph remove --node http://localhost:8020/ moraswap/bar",
+        "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 moraswap/bar bar.devnet.yaml"
+    }
+}

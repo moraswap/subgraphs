@@ -1,0 +1,23 @@
+{
+    "name": "dexcandles",
+    "license": "MIT",
+    "version": "1.0.0",
+    "author": "Moraswap",
+    "scripts": {
+        "prepare:neon": "mustache config/neon.json dexcandles.template.yaml > dexcandles.neon.yaml",
+        "prepare:devnet": "mustache config/devnet.json dexcandles.template.yaml > dexcandles.devnet.yaml",
+
+        "codegen:neon": "graph codegen dexcandles.neon.yaml",
+        "codegen:devnet": "graph codegen dexcandles.devnet.yaml",
+
+        "build:neon": "graph build dexcandles.neon.yaml",
+        "build:devnet": "graph build dexcandles.devnet.yaml",
+
+        "deploy:neon": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ moraswap/dexcandles dexcandles.neon.yaml",
+        "deploy:devnet": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ moraswap/dexcandles-devnet dexcandles.devnet.yaml",
+
+        "create-local": "graph create --node http://localhost:8020/ /moraswap/dexcandles",
+        "remove-local": "graph remove --node http://localhost:8020/ /moraswap/dexcandles",
+        "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 /moraswap/dexcandles"
+    }
+}

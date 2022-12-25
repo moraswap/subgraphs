@@ -1,0 +1,32 @@
+{
+  "name": "@moraswap/subgraphs",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "subgraphs/*"
+    ]
+  },
+  "resolutions": {
+    "assemblyscript": "git+https://github.com/AssemblyScript/assemblyscript.git#v0.6"
+  },
+  "scripts": {
+    "build": "yarn workspaces run build",
+    "codegen": "yarn workspaces run codegen",
+    "prepare:neon": "yarn workspaces run prepare:neon",
+    "prepare:devnet": "yarn workspaces run prepare:devnet",
+    "start:node": "docker-compose up -d"
+  },
+  "devDependencies": {
+    "@graphprotocol/graph-cli": "^0.20.0",
+    "@graphprotocol/graph-ts": "^0.20.0",
+    "@typescript-eslint/eslint-plugin": "^4.0.0",
+    "@typescript-eslint/parser": "^4.0.0",
+    "eslint": "^7.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "mustache": "^4.1.0",
+    "prettier": "^2.0.0",
+    "typescript": "^4.0.0"
+  },
+  "dependencies": {}
+}

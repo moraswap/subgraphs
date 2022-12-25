@@ -1,0 +1,23 @@
+{
+  "factory_address": "0x696d73D7262223724d60B2ce9d6e20fc31DfC56B",
+  "moraswap_start_block": "177662201",
+  "masterchef_address": "0xca9Eb9ae2296fc087Af89D70088c8D64e95BB66d",
+  "master_chef_start_block": "177663080",
+  "xmora_address": "0x549b5cb2D324F901aEd6938a3838fB9b10898441",
+  "mora_router_address": "0x491FFC6eE42FEfB4Edab9BA7D5F3e639959E081B",
+  "mora_maker_address": "0xD3184C8aAc4dcB76Fc382077143d0c6b851F2253",
+  "mora_token_address": "0x6dcDD1620Ce77B595E6490701416f6Dbf20D2f67",
+  "mora_usdc_pair_address": "0x9D9Da7589D8061495140192E0A7361564dAb25C5",
+  "wneon_address": "0xf1041596da0499c3438e3B1Eb7b95354C6Aed1f5",
+  "wbtc_address": "0x07A274154D79C23d5cd7ba78a243645E419CDd46",
+  "usdt_address": "0xAA24A5A5E273EFAa64a960B28de6E27B87FfDFfc",
+  "usdc_address": "0x6Ab1F83c0429A1322D7ECDFdDf54CE6D179d911f",
+  "weth_address": "0x90306D9492eB658e47A64Ef834e76c81A0242598",
+  "dai_address": "0x4954cd6230C19e63B7c7b131760Ef0C0c424321C",
+  "wneon_usdt_pair_address": "0x129399072D8B834b6F4C541F907E0ca20AD09944",
+  "wneon_usdc_pair_address": "0x0641D698D15426385c6a10b2Ebc407058c9E72fC",
+  "wneon_dai_pair_address": "0x255D2C600B3ba8475622d2ae15890B3542213737",
+  "min_usd_threshold_new_pairs": "0",
+  "min_liquidity_providers": "5",
+  "zero_address": "0x0000000000000000000000000000000000000000"
+}

@@ -1,0 +1,23 @@
+{
+    "name": "maker",
+    "license": "MIT",
+    "version": "1.0.0",
+    "author": "Moraswap",
+    "scripts": {
+	    "prepare:neon": "mustache config/neon.json maker.template.yaml > maker.neon.yaml",
+        "prepare:devnet": "mustache config/devnet.json maker.template.yaml > maker.devnet.yaml",
+
+        "codegen:neon": "graph codegen maker.neon.yaml",
+        "codegen:devnet": "graph codegen maker.devnet.yaml",
+
+        "build:neon": "graph build maker.neon.yaml",
+        "build:devnet": "graph build maker.devnet.yaml",
+
+        "deploy:neon": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ moraswap/maker maker.neon.yaml",
+        "deploy:devnet": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ moraswap/maker-devnet maker.devnet.yaml",
+
+        "create-local": "graph create --node http://localhost:8020/ moraswap/maker --access-token ",
+        "remove-local": "graph remove --node http://localhost:8020/ moraswap/maker --access-token ",
+        "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 --access-token moraswap/maker maker.devnet.yaml"
+    }
+}

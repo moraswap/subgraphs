@@ -1,0 +1,23 @@
+{
+    "name": "masterchef",
+    "license": "MIT",
+    "version": "1.0.0",
+    "author": "Moraswap",
+    "scripts": {
+        "prepare:neon": "mustache config/neon.json masterchef.template.yaml > masterchef.neon.yaml",
+        "prepare:devnet": "mustache config/devnet.json masterchef.template.yaml > masterchef.devnet.yaml",
+
+        "codegen:neon": "graph codegen masterchef.neon.yaml",
+        "codegen:devnet": "graph codegen masterchef.devnet.yaml",
+
+        "build:neon": "graph build masterchef.neon.yaml",
+        "build:devnet": "graph build masterchef.devnet.yaml",
+
+        "deploy:neon": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ moraswap/masterchef masterchef.neon.yaml",
+        "deploy:devnet": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ moraswap/masterchef-devnet masterchef.devnet.yaml",
+
+        "create-local": "graph create --node http://localhost:8020/ moraswap/masterchef",
+        "remove-local": "graph remove --node http://localhost:8020/ moraswap/masterchef",
+        "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 moraswap/masterchef masterchef.devnet.yaml"
+    }
+}
