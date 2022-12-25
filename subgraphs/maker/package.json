@@ -16,8 +16,8 @@
         "deploy:neon": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ moraswap/maker maker.neon.yaml",
         "deploy:devnet": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ moraswap/maker-devnet maker.devnet.yaml",
 
-        "create-local": "graph create --node http://localhost:8020/ moraswap/maker --access-token ",
-        "remove-local": "graph remove --node http://localhost:8020/ moraswap/maker --access-token ",
-        "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 --access-token moraswap/maker maker.devnet.yaml"
+        "create-local": "graph create --node http://localhost:8020/ moraswap/maker",
+        "remove-local": "graph remove --node http://localhost:8020/ moraswap/maker",
+        "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 moraswap/maker maker.devnet.yaml"
     }
 }

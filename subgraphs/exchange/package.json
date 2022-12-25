@@ -16,8 +16,8 @@
     "build:devnet": "graph build exchange.devnet.yaml",
     "deploy:neon": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ moraswap/exchange exchange.neon.yaml",
     "deploy:devnet": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ moraswap/exchange-devnet exchange.devnet.yaml",
-    "create-local": "graph create --node http://localhost:8020/ moraswap/exchange-devnet",
-    "remove-local": "graph remove --node http://localhost:8020/ moraswap/exchange-devnet",
-    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 moraswap/exchange-devnet exchange.devnet.yaml"
+    "create-local": "graph create --node http://localhost:8020/ moraswap/exchange",
+    "remove-local": "graph remove --node http://localhost:8020/ moraswap/exchange",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 moraswap/exchange exchange.devnet.yaml"
   }
 }
