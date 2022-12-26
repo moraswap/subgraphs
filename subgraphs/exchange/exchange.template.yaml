@@ -1,6 +1,8 @@
 specVersion: 0.0.3
 description: Exchange
 repository: https://github.com/moraswap/subgraphs
+features:
+  - fullTextSearch
 schema:
   file: ./exchange.graphql
 dataSources:
